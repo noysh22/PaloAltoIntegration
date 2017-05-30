@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PaloAltoIntegration.DLL\PaloAltoIntegration.DLL.csproj">
+      <Project>{e9c0b3e7-ea6f-4cde-b898-3e25c1765d32}</Project>
+      <Name>PaloAltoIntegration.DLL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

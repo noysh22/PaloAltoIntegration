@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\PaloaltoApiClient.cs" />
+    <Compile Include="API\PaloaltoApiRequestTypes.cs" />
+    <Compile Include="Common\StringExtensions.cs" />
     <Compile Include="PaloAltoExceptions.cs" />
     <Compile Include="PaloAltoManager.cs" />
     <Compile Include="PaloAltoMetadataProvider.cs" />
@@ -58,8 +61,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="API\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

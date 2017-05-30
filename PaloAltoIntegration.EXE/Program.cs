@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Siemplify.Integrations.PaloAlto.API;
+
 namespace PaloAltoIntegration.EXE
 {
     public class Program
@@ -12,7 +14,8 @@ namespace PaloAltoIntegration.EXE
         public static void Main(string[] args)
         {
             Debugger.Break();
-            Console.WriteLine("PaloAlto Integration");
+            var apiClient = new PaloaltoApiClient("CHANGEHERE", "CHANGEHERE", "CHANGEHERE");
+            Console.WriteLine(ApiRequestTypes.COMMIT.ToString().ToLower());
         }
     }
 }
