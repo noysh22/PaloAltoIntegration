@@ -8,8 +8,8 @@ namespace Siemplify.Integrations.PaloAlto
 {
     public class Settings
     {
-        public static readonly string ApiBaseHost = "Gateway Host";
-        public static readonly string ApiUserName = "Gateway User";
-        public static readonly string ApiKey = "Gateway Key";
+        public static readonly string ApiBaseHost = "Api Host";
+        public static readonly string ApiUserName = "Api User";
+        public static readonly string ApiKey = "Api Pass";
     }
 }

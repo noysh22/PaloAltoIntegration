@@ -12,4 +12,10 @@ namespace Siemplify.Integrations.PaloAlto
         public PaloAltoException(string message) : base(message) { }
         public PaloAltoException(string message, Exception innerEx) : base(message, innerEx) { }
     }
+
+    public class PaloAltoApiException : PaloAltoException
+    {
+        public PaloAltoApiException(string message) : base(message) { }
+        public PaloAltoApiException(string message, Exception innerEx) : base(message, innerEx) { }
+    }
 }

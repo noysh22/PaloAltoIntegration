@@ -49,6 +49,10 @@
     <Compile Include="API\PaloaltoApiClient.cs" />
     <Compile Include="API\PaloaltoApiRequestTypes.cs" />
     <Compile Include="Common\StringExtensions.cs" />
+    <Compile Include="Data\ApiGetDevicesResult.cs" />
+    <Compile Include="Data\ApiGetKeyResult.cs" />
+    <Compile Include="Data\ApiResponse.cs" />
+    <Compile Include="Data\PaloAltoDevice.cs" />
     <Compile Include="PaloAltoExceptions.cs" />
     <Compile Include="PaloAltoManager.cs" />
     <Compile Include="PaloAltoMetadataProvider.cs" />
