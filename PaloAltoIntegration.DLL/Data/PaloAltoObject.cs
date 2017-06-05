@@ -7,9 +7,8 @@ using System.Xml.Serialization;
 
 namespace Siemplify.Integrations.PaloAlto.Data
 {
-    public class ApiGetKeyResult : ApiResult
+    [XmlRoot("entry")]
+    public class PaloAltoObject
     {
-        [XmlElement("key")]
-        public string Key { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace Siemplify.Integrations.PaloAlto.API
         LOG,
         IMPORT,
         EXPORT,
-        //USERID, // Not supported for now translated to user-id
+        USER_ID, // Not supported for now translated to user-id
         VERSION
     }
 
@@ -34,8 +34,8 @@ namespace Siemplify.Integrations.PaloAlto.API
         CLONE,
         MOVE,
         OVERRIDE,
-        //MULTIMOVE, // Not supported for now translated to multi-move
-        //MULTICLONE, // Not supported for now translated to multi-clone
+        MULTI_MOVE, // Not supported for now translated to multi-move
+        MULTI_CLONE, // Not supported for now translated to multi-clone
         COMPLETE,
     }
 }

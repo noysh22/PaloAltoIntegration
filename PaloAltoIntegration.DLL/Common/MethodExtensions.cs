@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Siemplify.Integrations.PaloAlto.Common
 {
-    public static class StringExtensions
+    public static class MethodExtensions
     {
         public static KeyValuePair<string, object> PairWith(this string key, object value)
         {

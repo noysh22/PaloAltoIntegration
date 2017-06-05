@@ -48,11 +48,18 @@
   <ItemGroup>
     <Compile Include="API\PaloaltoApiClient.cs" />
     <Compile Include="API\PaloaltoApiRequestTypes.cs" />
-    <Compile Include="Common\StringExtensions.cs" />
-    <Compile Include="Data\ApiGetDevicesResult.cs" />
-    <Compile Include="Data\ApiGetKeyResult.cs" />
-    <Compile Include="Data\ApiResponse.cs" />
-    <Compile Include="Data\PaloAltoDevice.cs" />
+    <Compile Include="API\PaloAltoApiUrlBuilder.cs" />
+    <Compile Include="API\Results\ApiAsyncRawResult.cs" />
+    <Compile Include="API\Results\ApiGetLogAsyncResult.cs" />
+    <Compile Include="API\Results\ApiJobMsgResult.cs" />
+    <Compile Include="Common\MethodExtensions.cs" />
+    <Compile Include="API\Results\ApiGetDevicesResult.cs" />
+    <Compile Include="API\Results\ApiGetKeyResult.cs" />
+    <Compile Include="API\Results\ApiResponse.cs" />
+    <Compile Include="Data\PaloaltoDevice.cs" />
+    <Compile Include="Data\PaloaltoJob.cs" />
+    <Compile Include="Data\PaloAltoLogEntry.cs" />
+    <Compile Include="Data\PaloAltoObject.cs" />
     <Compile Include="PaloAltoExceptions.cs" />
     <Compile Include="PaloAltoManager.cs" />
     <Compile Include="PaloAltoMetadataProvider.cs" />

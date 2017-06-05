@@ -8,8 +8,7 @@ using Siemplify.Integrations.PaloAlto.Common;
 
 namespace Siemplify.Integrations.PaloAlto.Data
 {
-    [XmlRoot("entry")]
-    public class PaloAltoDevice
+    public class PaloaltoDevice : PaloAltoObject
     {
         [XmlAttribute("name")]
         public string Name { get; set; }
