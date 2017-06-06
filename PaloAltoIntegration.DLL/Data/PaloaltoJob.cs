@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using RestSharp.Deserializers;
 
 namespace Siemplify.Integrations.PaloAlto.Data
 {
@@ -13,13 +14,13 @@ namespace Siemplify.Integrations.PaloAlto.Data
         [XmlEnum("FIN")] FIN = 0x1
     }
 
-    [XmlRoot("job")]
+    [DeserializeAs(Name = "job")]
     public class PaloaltoJob
     {
-        [XmlElement("id")]
+        [DeserializeAs(Name = "id")]
         public int Id { get; set; }
 
-        [XmlElement("status")]
+        [DeserializeAs(Name = "status")]
         public JobStatus Status { get; set; }
     }
 }

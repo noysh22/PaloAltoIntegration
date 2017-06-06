@@ -32,7 +32,7 @@ namespace Siemplify.Integrations.PaloAlto.API
 
         public static RestRequest CreateRestRequest(string url, Method method)
         {
-            return new RestRequest(url, method) { XmlSerializer = new DotNetXmlSerializer(), RequestFormat = DataFormat.Xml};
+            return new RestRequest(url, method) {RequestFormat = DataFormat.Xml};
         }
 
         public PaloaltoApiClient(string paloaltoHost, string username, string pass, bool ignoreSsl = true)
@@ -56,9 +56,9 @@ namespace Siemplify.Integrations.PaloAlto.API
 
             var request = CreateRestRequest(requestUrl, Method.GET);
 
-            var keyResponse = _client.Execute<ApiResponse<ApiGetKeyResult>>(request).Data;
+            var keyResponse = _client.Execute<ApiKey>(request);
 
-            return keyResponse.Result.Key;
+            return keyResponse.Data.Key;
         }
 
         public string ExecuteApiRequest(ApiRequestTypes type, params KeyValuePair<string, object>[] additionalParams)
@@ -114,7 +114,34 @@ namespace Siemplify.Integrations.PaloAlto.API
             return response.Data;
         }
 
-        public ApiJobMsgResult StartApiJob(ApiRequestTypes type, params KeyValuePair<string, object>[] additionalParams)
+        //public ApiJobMsgData StartApiJob(ApiRequestTypes type, params KeyValuePair<string, object>[] additionalParams)
+        //{
+        //    if (string.IsNullOrEmpty(_apiKey))
+        //    {
+        //        throw new PaloAltoApiException("Cannot execute an api request without an api Key");
+        //    }
+
+        //    var requestUrl = PaloAltoApiUrlBuilder.BuildApiRequest(type, additionalParams);
+
+        //    if (ApiRequestTypes.KEYGEN != type)
+        //    {
+        //        requestUrl += string.Format(PaloAltoApiKeyParamFormat, _apiKey);
+        //    }
+
+        //    var request = CreateRestRequest(requestUrl, Method.GET);
+
+        //    var response = _client.Execute<ApiJobMsgData>(request);
+
+        //    if (response.StatusCode != HttpStatusCode.OK)
+        //    {
+        //        throw new PaloAltoApiException(string.Format("Failed executing api request: {0}", requestUrl),
+        //            response.ErrorException);
+        //    }
+
+        //    return response.Data;
+        //}
+
+        public JobMsg StartApiJob(ApiRequestTypes type, params KeyValuePair<string, object>[] additionalParams)
         {
             if (string.IsNullOrEmpty(_apiKey))
             {
@@ -130,7 +157,7 @@ namespace Siemplify.Integrations.PaloAlto.API
 
             var request = CreateRestRequest(requestUrl, Method.GET);
 
-            var response = _client.Execute<ApiJobMsgResult>(request);
+            var response = _client.Execute<JobMsg>(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
             {

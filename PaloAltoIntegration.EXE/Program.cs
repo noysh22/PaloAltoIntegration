@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Siemplify.Integrations.PaloAlto.API;
+using Siemplify.Integrations.PaloAlto.API.Results;
 using Siemplify.Integrations.PaloAlto.Common;
 using Siemplify.Integrations.PaloAlto.Data;
 
@@ -33,7 +34,14 @@ namespace PaloAltoIntegration.EXE
             //    "cmd".PairWith(new List<string> { "show", "devices", "connected" }));
 
             var response = apiClient.ExecuteApiRequest<ApiGetDevicesResult>(ApiRequestTypes.OP,
-                "cmd".PairWith(new List<string> {"show", "devices", "connected"}));
+                "cmd".PairWith(new List<string> { "show", "devices", "all" }));
+
+            //var jobResponse = apiClient.StartApiJob(ApiRequestTypes.LOG, "log-type".PairWith("system"));
+
+            //var jobResult = apiClient.GetAsyncJobResult<ApiGetLogAsyncResult>(ApiRequestTypes.LOG, "action".PairWith("get"),
+            //    "job-id".PairWith(jobResponse.Job));
+
+            //Console.WriteLine(jobResult.EntriesList.LogEntries.Count);
 
             Console.WriteLine(response);
         }
